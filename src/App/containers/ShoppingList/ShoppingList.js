@@ -17,7 +17,7 @@ class ShoppingList extends Component {
             .then(list => {
                 this.setState({shoppingList: list.data.products})
             })
-            .catch(error=>console.log(error))
+            .catch(error => console.log(error))
     }
 
     filterItems = (event) => {
@@ -48,8 +48,6 @@ class ShoppingList extends Component {
                     }
                 </div>
             </div>
-
-
         );
     }
 }

@@ -18,7 +18,7 @@ const ShoppingItem = ({image, name, link, price, id, stars}) => {
         <div className="product">
             <a
                 href={link}
-                style={{display: 'block'}}
+                style={blockStyle}
             >
                 <img
                     src={image}
