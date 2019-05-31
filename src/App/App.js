@@ -3,16 +3,14 @@ import React from 'react';
 import ShoppingList from "./containers/ShoppingList/ShoppingList";
 import Footer from "./components/Footer/Footer";
 
-import './App.css'
+import "./App.css";
 
 function App() {
     return (
-        <div className='pageWrapper'>
-            <div className="contentWrapper">
-                <ShoppingList />
-            </div >
-            <Footer />
-        </div >
+        <div className="container-fluid">
+            <ShoppingList/>
+            <Footer/>
+        </div>
     );
 }
 
