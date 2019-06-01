@@ -1,3 +1,4 @@
+# filter is working based on name of the product
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
