@@ -1,11 +1,33 @@
 import React from 'react';
 
-const SideDrawer = ({categories}) => {
-    return (
-        <div>
-            {categories.map((category)=><p>{category}</p>)}
-        </div>
-    );
+class SideDrawer extends React.Component {
+    state = {
+        checked: true
+    };
+    // debugger
+    handlechecked = () => {
+        this.setState({checked: !this.state.checked})
+    };
+
+    render() {
+        const {category, handleCategories} = this.props;
+        return (
+            <div>
+                <label>{category}
+                    <input
+                        type="checkbox"
+                        value={category}
+                        onChange={e => {
+                            this.handlechecked();
+                            handleCategories(e);
+                        }}
+                        checked={this.state.checked}
+                    />
+                </label>
+            </div>
+        );
+    }
+
 };
 
 

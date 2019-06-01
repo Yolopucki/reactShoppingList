@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Filter = ({filterItemsHandler, filteredValue}) => {
+const Filter = ({handleFilter, filteredByInput}) => {
     return (
         <div
             style={{
@@ -13,16 +13,16 @@ const Filter = ({filterItemsHandler, filteredValue}) => {
                 <input
                     type="text"
                     style={{marginLeft: '10px'}}
-                    value={filteredValue}
-                    onChange={e => filterItemsHandler(e)}
+                    value={filteredByInput}
+                    onChange={e => handleFilter(e)}
                 />
             </label>
         </div>
     );
 };
 Filter.propTypes = {
-    filterItemsHandler: PropTypes.func.isRequired,
-    filteredValue: PropTypes.string.isRequired
+    handleFilter: PropTypes.func.isRequired,
+    filteredByInput: PropTypes.string.isRequired
 };
 
 export default Filter;
