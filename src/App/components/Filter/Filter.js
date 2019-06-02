@@ -1,23 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import {FormControl, InputGroup} from "react-bootstrap"
+
 const Filter = ({handleFilter, filteredByInput}) => {
     return (
-        <div
-            style={{
-                marginTop: '10px',
-                textAlign: 'center'
-            }}
-        >
-            <label> Filter:
-                <input
-                    type="text"
-                    style={{marginLeft: '10px'}}
-                    value={filteredByInput}
-                    onChange={e => handleFilter(e)}
-                />
-            </label>
+        <div className="col-12">
+        <div className="row">
+            <InputGroup className="mb-3 mt-3 justify-content-center">
+                <InputGroup.Prepend>
+                    <InputGroup.Text id="basic-addon3">
+                        Filter:
+                    </InputGroup.Text>
+                    <FormControl
+                        placeholder={filteredByInput}
+                        value={filteredByInput}
+                        aria-label="Username"
+                        aria-describedby="basic-addon1"
+                        onChange={e => handleFilter(e)}
+                    />
+                </InputGroup.Prepend>
+            </InputGroup>
         </div>
+        </div>
+
     );
 };
 Filter.propTypes = {

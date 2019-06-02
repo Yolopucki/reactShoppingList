@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './ShoppingItem.css'
+import './ShoppingItem.css';
+import {ButtonGroup, Button} from "react-bootstrap";
 
 
 const getStarsWidth = (stars) => {
@@ -15,7 +16,7 @@ const blockStyle = {
 };
 const ShoppingItem = ({image, name, link, price, id, stars}) => {
     return (
-        <div className="product">
+        <div className="product col-12 col-lg-4 mb-4">
             <a
                 href={link}
                 style={blockStyle}
@@ -39,11 +40,9 @@ const ShoppingItem = ({image, name, link, price, id, stars}) => {
             >{name}</a></p>
             <span style={blockStyle}>Code: {id}</span>
             <h3>Price: {price}$</h3>
-            <button
-                className="btn btn-success btn-lg"
-                style={blockStyle}
-            >Buy
-            </button>
+            <ButtonGroup>
+                <Button variant="success" size="lg" bloc>Buy</Button>
+            </ButtonGroup>
         </div>
     );
 };

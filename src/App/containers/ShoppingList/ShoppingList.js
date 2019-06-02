@@ -43,7 +43,7 @@ class ShoppingList extends Component {
             this.setState({filteredByCategories:newFilteredByCategories});
         }
     };
-
+//before mapping into shopping list
     filterItems = (item) => {
         return item.name.toLowerCase().includes(this.state.filteredByInput)
             && Object.keys(this.state.filteredByCategories).includes(item.bsr_category);
@@ -52,19 +52,19 @@ class ShoppingList extends Component {
     render() {
         const {filteredByInput, shoppingList, categories} = this.state;
         return (
-            <div>
+            <div className="container-fluid">
                 <Filter
                     handleFilter={this.handleFilter}
                     filteredByInput={filteredByInput}
                 />
                 <div className="row">
-                    <div className="col-3">
+                    <div className="col-12  d-flex flex-row justify-content-around">
                         {categories && categories.map(category => <SideDrawer
                             key={category} {...{category}}
                             handleCategories={this.handleCategories}
                         />)}
                     </div>
-                    <div className='products col-9'>
+                    <div className='products col-12'>
                         {shoppingList && categories && shoppingList.filter(this.filterItems)
                             .map(p => (
                                 <ShoppingItem
