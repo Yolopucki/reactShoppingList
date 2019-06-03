@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './ShoppingItem.css';
-import {ButtonGroup, Button} from "react-bootstrap";
+import { Button} from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 
 
@@ -21,7 +21,7 @@ const ShoppingItem = ({image, name, link, price, id, stars}) => {
             <Card.Img
                 variant="top"
                 src={image}
-                style={{maxHeight:"280px"}}
+                style={{maxHeight:"280px", width:"80%", marginLeft:"50%", transform:"translateX(-50%)"}}
             />
             <Card.Body style={{display:"flex", flexDirection:"column"}}>
                 <div className="stars-outer">
