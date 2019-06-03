@@ -1,5 +1,5 @@
 import React from 'react';
-import {InputGroup} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import Button from "react-bootstrap/Button";
 
 class SideDrawer extends React.Component {
@@ -8,7 +8,12 @@ class SideDrawer extends React.Component {
         const {category, handleCategories} = this.props;
         return (
             <div>
-                <Button className="mb-3" onClick={()=>{handleCategories(category)}}>{category}</Button>
+               <Link to={category}> <Button
+                    className="mb-3"
+                    onClick={() => {
+                        handleCategories(category);
+                    }}
+               >{category}</Button></Link>
             </div>
         );
     }

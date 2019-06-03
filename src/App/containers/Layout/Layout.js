@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import axios from "axios";
+import {Route} from 'react-router-dom';
+
 
 import SideDrawer from "./SideDrawer/SideDrawer";
 import ShoppingList from "../../containers/ShoppingList/ShoppingList"
@@ -48,8 +50,14 @@ class Layout extends Component {
     render() {
         const {categories, shoppingList, searchedValue} = this.state;
         return (
-            <div className="position-relative" style={{minHeight:'100vh'}}>
-                <div className="row" style={{padding:'2.5rem'}}>
+            <div
+                className="position-relative"
+                style={{minHeight: '100vh'}}
+            >
+                <div
+                    className="row"
+                    style={{padding: '2.5rem'}}
+                >
                     <Filter
                         handleFilterSearch={this.handleFilterSearch}
                         searchedValue={searchedValue}
@@ -60,7 +68,18 @@ class Layout extends Component {
                             handleCategories={this.handleCategories}
                         />)}
                     </div>
-                    <ShoppingList {...{shoppingList}} {...{categories}} filterItems={this.filterItems}/>
+                    <Route
+                        path='/' exact
+                        render={props =>
+                            <ShoppingList {...{shoppingList}} {...{categories}}/>
+                        }
+                    />
+                    <Route
+                        path='/'
+                        render={props =>
+                            <ShoppingList {...{shoppingList}} {...{categories}} filterItems={this.filterItems}/>
+                        }
+                    />
                 </div>
                 <Footer/>
             </div>

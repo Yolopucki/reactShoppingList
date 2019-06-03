@@ -12,9 +12,7 @@ const getStarsWidth = (stars) => {
     const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
     return starPercentageRounded;
 };
-const blockStyle = {
-    display: 'block'
-};
+
 const ShoppingItem = ({image, name, link, price, id, stars}) => {
     return (
         <Card style={{width: '18rem'}}>
