@@ -58,13 +58,13 @@ class ShoppingList extends Component {
                     filteredByInput={filteredByInput}
                 />
                 <div className="row">
-                    <div className="col-12  d-flex flex-row justify-content-around">
+                    <div className="col-12  col-md-3">
                         {categories && categories.map(category => <SideDrawer
                             key={category} {...{category}}
                             handleCategories={this.handleCategories}
                         />)}
                     </div>
-                    <div className='products col-12'>
+                    <div className='products col-12 col-md-9'>
                         {shoppingList && categories && shoppingList.filter(this.filterItems)
                             .map(p => (
                                 <ShoppingItem
