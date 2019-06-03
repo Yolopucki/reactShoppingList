@@ -7,14 +7,13 @@ class SideDrawer extends React.Component {
     render() {
         const {category, handleCategories} = this.props;
         return (
-            <div>
                <Link to={category}> <Button
+                   block
                     className="mb-3"
                     onClick={() => {
                         handleCategories(category);
                     }}
                >{category}</Button></Link>
-            </div>
         );
     }
 

@@ -7,6 +7,7 @@ import SideDrawer from "./SideDrawer/SideDrawer";
 import ShoppingList from "../../containers/ShoppingList/ShoppingList"
 import Footer from "./Footer/Footer";
 import Filter from "../../components/Filter/Filter";
+import ButtonGroup from "react-bootstrap/es/test/ButtonGroup";
 
 class Layout extends Component {
     state = {
@@ -46,9 +47,11 @@ class Layout extends Component {
         return item.name.toLowerCase().includes(this.state.searchedValue)
             && this.state.searchedCategory.includes(item.bsr_category);
     };
+    filterItemsWithText = (item) => item.name.toLowerCase().includes(this.state.searchedValue);
+
 
     render() {
-        const {categories, shoppingList, searchedValue} = this.state;
+        const {categories, shoppingList, searchedValue, searchedCategory} = this.state;
         return (
             <div
                 className="position-relative"
@@ -61,17 +64,21 @@ class Layout extends Component {
                     <Filter
                         handleFilterSearch={this.handleFilterSearch}
                         searchedValue={searchedValue}
+                        {...{searchedCategory}}
                     />
-                    <div className="col-12  col-md-3">
+                    <ButtonGroup className="col-12  col-md-3 d-flex flex-column">
                         {categories && categories.map(category => <SideDrawer
                             key={category} {...{category}}
                             handleCategories={this.handleCategories}
                         />)}
-                    </div>
+                    </ButtonGroup>
                     <Route
-                        path='/' exact
+                        path='/'
+                        exact
                         render={props =>
-                            <ShoppingList {...props} {...{shoppingList}} {...{categories}}/>
+                            <ShoppingList {...props} {...{shoppingList}} {...{categories}} filterItems={this.filterItemsWithText}
+                                          all={true}
+                            />
                         }
                     />
                     <Route
