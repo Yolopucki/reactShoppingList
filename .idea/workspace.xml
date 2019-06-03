@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="de24a498-8410-4e66-a28f-55c867212e7c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/App/containers/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/containers/Layout/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/containers/Layout/SideDrawer/SideDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/containers/Layout/SideDrawer/SideDrawer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+            <state relative-caret-position="192">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -42,10 +41,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/shoppingItem/ShoppingItem.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/shoppingItem/ShoppingItem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/components/Filter/Filter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App/containers/Layout/Layout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="79" column="91" selection-start-line="79" selection-start-column="80" selection-end-line="79" selection-end-column="91" />
+            <state relative-caret-position="317">
+              <caret line="85" column="10" lean-forward="true" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -56,8 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App/containers/Layout/SideDrawer/SideDrawer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="192">
+              <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -79,6 +108,7 @@
     <findStrings>
       <find>filteredByCategories</find>
       <find>searchedCategory</find>
+      <find>filterItems</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -104,13 +134,14 @@
         <option value="$PROJECT_DIR$/src/App/components/shoppingItem/ShoppingItem.css" />
         <option value="$PROJECT_DIR$/src/App/components/shoppingItem/ShoppingItem.js" />
         <option value="$PROJECT_DIR$/src/App/App.js" />
-        <option value="$PROJECT_DIR$/src/App/components/Filter/Filter.js" />
         <option value="$PROJECT_DIR$/src/App/containers/Layout/Layout.css" />
         <option value="$PROJECT_DIR$/src/App/containers/Layout/Footer/Footer.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/App/containers/Layout/SideDrawer/SideDrawer.js" />
-        <option value="$PROJECT_DIR$/src/App/containers/Layout/Layout.js" />
+        <option value="$PROJECT_DIR$/src/App/components/Filter/Filter.js" />
         <option value="$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.js" />
+        <option value="$PROJECT_DIR$/src/App/containers/ShoppingList/shoppingItem/ShoppingItem.js" />
+        <option value="$PROJECT_DIR$/src/App/containers/Layout/Layout.js" />
       </list>
     </option>
   </component>
@@ -199,6 +230,15 @@
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="ShoppingList" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="shoping-list" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shoping-list" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="ShoppingList" type="462c0819:PsiDirectoryNode" />
+              <item name="shoppingItem" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -263,7 +303,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26301000" />
+    <option name="totallyTimeSpent" value="26811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -285,7 +325,7 @@
       <window_info anchor="bottom" id="Quokka" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.31143552" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.31143552" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -355,20 +395,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App/components/SideDrawer/SideDrawer.css" />
     <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.css" />
-    <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/shoppingItem/ShoppingItem.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/shoppingItem/ShoppingItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-537">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -380,16 +406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/components/Filter/Filter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -418,8 +434,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App/containers/Layout/SideDrawer/SideDrawer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="192">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/components/Filter/Filter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/shoppingItem/ShoppingItem.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/shoppingItem/ShoppingItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -428,8 +468,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App/containers/Layout/Layout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="79" column="91" selection-start-line="79" selection-start-column="80" selection-end-line="79" selection-end-column="91" />
+        <state relative-caret-position="317">
+          <caret line="85" column="10" lean-forward="true" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -438,8 +478,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        <state relative-caret-position="192">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

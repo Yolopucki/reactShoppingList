@@ -3,7 +3,9 @@ import React, {Component} from 'react';
 import ShoppingItem from "./shoppingItem/ShoppingItem";
 
 class ShoppingList extends Component {
-
+componentDidMount() {
+    console.log(this.props);
+}
 
     render() {
         const {shoppingList, categories, filterItems} = this.props;

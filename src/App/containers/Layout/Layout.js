@@ -71,13 +71,13 @@ class Layout extends Component {
                     <Route
                         path='/' exact
                         render={props =>
-                            <ShoppingList {...{shoppingList}} {...{categories}}/>
+                            <ShoppingList {...props} {...{shoppingList}} {...{categories}}/>
                         }
                     />
                     <Route
                         path='/'
                         render={props =>
-                            <ShoppingList {...{shoppingList}} {...{categories}} filterItems={this.filterItems}/>
+                            <ShoppingList {...props} {...{shoppingList}} {...{categories}} filterItems={this.filterItems}/>
                         }
                     />
                 </div>
