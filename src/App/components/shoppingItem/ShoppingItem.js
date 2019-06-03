@@ -16,7 +16,7 @@ const blockStyle = {
 };
 const ShoppingItem = ({image, name, link, price, id, stars}) => {
     return (
-        <div className="product col-12 col-lg-4 mb-4">
+        <div className="product col-12 col-lg-5 mb-4 text-center d-flex flex-column">
             <a
                 href={link}
                 style={blockStyle}

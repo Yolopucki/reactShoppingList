@@ -32,10 +32,9 @@
 
 .product {
     position: relative;
-    display: flex;
-    flex-direction: column;
+
     border: 1px solid #ccc;
-    width: 33%;
+    /*width: 33%;*/
     min-height: 397px;
     height: 590px;
     border-radius: 5px;
@@ -43,7 +42,6 @@
     margin-right: 10px;
     margin-bottom: 10px;
     vertical-align: top;
-    text-align: center;
 }
 
 .product .stars-outer {
@@ -67,20 +65,13 @@
     cursor: pointer;
     background: #fff;
     left: 50%;
-    margin-left: -55px;
     top: 60px;
 }
 
-/* .product button {*/
-/*    width: 70%;*/
-/*    margin-left: 50%;*/
-/*    transform: translateX(-50%);*/
-/*    margin-bottom: auto;*/
-/*}*/
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .product{
-        height: 600px;
+        height: 650px;
         box-sizing: border-box;
     }
 }

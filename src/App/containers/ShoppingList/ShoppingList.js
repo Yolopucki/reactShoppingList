@@ -4,7 +4,6 @@ import axios from 'axios';
 import ShoppingItem from "../../components/shoppingItem/ShoppingItem";
 import Filter from "../../components/Filter/Filter";
 
-import './ShoppingList.css';
 import SideDrawer from "../../components/SideDrawer/SideDrawer";
 
 class ShoppingList extends Component {
@@ -64,7 +63,7 @@ class ShoppingList extends Component {
                             handleCategories={this.handleCategories}
                         />)}
                     </div>
-                    <div className='products col-12 col-md-9'>
+                    <div className='products col-12 col-md-9 row d-flex mt-1 justify-content-around flex-wrap'>
                         {shoppingList && categories && shoppingList.filter(this.filterItems)
                             .map(p => (
                                 <ShoppingItem
