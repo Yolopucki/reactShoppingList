@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import './ShoppingItem.css';
 import {ButtonGroup, Button} from "react-bootstrap";
+import Card from "react-bootstrap/Card";
 
 
 const getStarsWidth = (stars) => {
@@ -16,34 +17,29 @@ const blockStyle = {
 };
 const ShoppingItem = ({image, name, link, price, id, stars}) => {
     return (
-        <div className="product col-12 col-lg-5 mb-4 text-center d-flex flex-column">
-            <a
-                href={link}
-                style={blockStyle}
-            >
-                <img
-                    src={image}
-                    alt={name}
-                    className="thumb"
-                />
-            </a>
-            <div className="stars-outer">
-                <div
-                    className="stars-inner"
-                    style={{width: getStarsWidth(stars)}}
-                >
+        <Card style={{width: '18rem'}}>
+            <Card.Img
+                variant="top"
+                src={image}
+                style={{maxHeight:"280px"}}
+            />
+            <Card.Body style={{display:"flex", flexDirection:"column"}}>
+                <div className="stars-outer">
+                    <div
+                        className="stars-inner"
+                        style={{width: getStarsWidth(stars)}}
+                    >
+                    </div>
                 </div>
-            </div>
-            <p><a
-                href={link}
-                style={blockStyle}
-            >{name}</a></p>
-            <span style={blockStyle}>Code: {id}</span>
-            <h3>Price: {price}$</h3>
-            <ButtonGroup>
-                <Button variant="success" size="lg" bloc>Buy</Button>
-            </ButtonGroup>
-        </div>
+                <Card.Text style={{flexGrow: '3'}}>{name}</Card.Text>
+                <Card.Title style={{textAlign: "center"}}>Price: {price} $</Card.Title>
+                <Button
+                    variant="success"
+                    size="lg"
+                    style={{width: "100%"}}
+                ><a href={link}>Buy</a></Button>
+            </Card.Body>
+        </Card>
     );
 };
 

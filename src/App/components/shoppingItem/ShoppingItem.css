@@ -1,10 +1,12 @@
+/*only to manage stars*/
 .stars-outer {
     display: inline-block;
     position: relative;
     font-family: Font Awesome\ 5 Free;
     text-align: left;
     left: 0;
-    width: 74.5px;
+    width: 90px;
+    margin-top: 10px;
 }
 
 .stars-outer::before {
@@ -30,48 +32,3 @@
     color: #f8ce0b;
 }
 
-.product {
-    position: relative;
-
-    border: 1px solid #ccc;
-    /*width: 33%;*/
-    min-height: 397px;
-    height: 590px;
-    border-radius: 5px;
-    padding: 25px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    vertical-align: top;
-}
-
-.product .stars-outer {
-    margin-top: 10px;
-}
-
-.product h3 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #C30;
-}
-
-.product p {
-    font-weight: 300;
-    margin-top: 20px;
-    flex-grow: 3;
-}
-
-.product img {
-    height: 140px;
-    cursor: pointer;
-    background: #fff;
-    left: 50%;
-    top: 60px;
-}
-
-
-@media (max-width: 1000px) {
-    .product{
-        height: 650px;
-        box-sizing: border-box;
-    }
-}
