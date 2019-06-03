@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import {FormControl, InputGroup} from "react-bootstrap"
 
-const Filter = ({handleFilter, filteredByInput}) => {
+const Filter = ({handleFilterSearch, searchedValue}) => {
     return (
         <div className="col-12 row">
             <InputGroup className="mb-3 mt-3 justify-content-center">
@@ -12,21 +12,17 @@ const Filter = ({handleFilter, filteredByInput}) => {
                         Filter:
                     </InputGroup.Text>
                     <FormControl
-                        placeholder={filteredByInput}
-                        value={filteredByInput}
+                        placeholder={searchedValue}
+                        value={searchedValue}
                         aria-label="Username"
                         aria-describedby="basic-addon1"
-                        onChange={e => handleFilter(e)}
+                        onChange={e => handleFilterSearch(e)}
                     />
                 </InputGroup.Prepend>
             </InputGroup>
         </div>
 
     );
-};
-Filter.propTypes = {
-    handleFilter: PropTypes.func.isRequired,
-    filteredByInput: PropTypes.string.isRequired
 };
 
 export default Filter;

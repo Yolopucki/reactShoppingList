@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de24a498-8410-4e66-a28f-55c867212e7c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App/components/shoppingItem/ShoppingItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/components/shoppingItem/ShoppingItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/containers/Layout/Layout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App/containers/Layout/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/components/Filter/Filter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/components/Filter/Filter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/containers/Layout/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/components/SideDrawer/SideDrawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/containers/Layout/SideDrawer/SideDrawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/components/shoppingItem/ShoppingItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/containers/ShoppingList/shoppingItem/ShoppingItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/components/shoppingItem/ShoppingItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/containers/ShoppingList/shoppingItem/ShoppingItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,22 +26,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/App/components/shoppingItem/ShoppingItem.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-537">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="288">
+              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App/components/shoppingItem/ShoppingItem.css">
+        <entry file="file://$PROJECT_DIR$/src/App/components/Filter/Filter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="76">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/App/containers/Layout/Layout.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="50" column="71" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#1027#1096#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/containers/Layout/Layout.css">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -46,6 +93,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>filteredByCategories</find>
+      <find>searchedCategory</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -63,23 +111,27 @@
         <option value="$PROJECT_DIR$/src/App/components/Footer/Footer.module.css" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/App/components/SideDrawer/SideDrawer.css" />
-        <option value="$PROJECT_DIR$/src/App/App.js" />
         <option value="$PROJECT_DIR$/src/App/App.css" />
         <option value="$PROJECT_DIR$/src/App/components/SideDrawer/SideDrawer.js" />
         <option value="$PROJECT_DIR$/src/App/components/Footer/Footer.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.css" />
-        <option value="$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.js" />
-        <option value="$PROJECT_DIR$/src/App/components/Filter/Filter.js" />
         <option value="$PROJECT_DIR$/src/App/components/shoppingItem/ShoppingItem.css" />
         <option value="$PROJECT_DIR$/src/App/components/shoppingItem/ShoppingItem.js" />
+        <option value="$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.js" />
+        <option value="$PROJECT_DIR$/src/App/App.js" />
+        <option value="$PROJECT_DIR$/src/App/components/Filter/Filter.js" />
+        <option value="$PROJECT_DIR$/src/App/containers/Layout/SideDrawer/SideDrawer.js" />
+        <option value="$PROJECT_DIR$/src/App/containers/Layout/Layout.css" />
+        <option value="$PROJECT_DIR$/src/App/containers/Layout/Layout.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -130,24 +182,7 @@
               <item name="shoping-list" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="App" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Footer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shoping-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shoping-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="shoppingItem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shoping-list" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shoping-list" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="SideDrawer" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shoping-list" type="b2602c69:ProjectViewProjectNode" />
@@ -155,6 +190,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="App" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="Layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shoping-list" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shoping-list" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="Layout" type="462c0819:PsiDirectoryNode" />
+              <item name="SideDrawer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shoping-list" type="b2602c69:ProjectViewProjectNode" />
@@ -181,11 +226,14 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/App/containers/Layout" />
+      <recent name="$PROJECT_DIR$/src/App/containers/ShoppingList" />
       <recent name="$PROJECT_DIR$/src/App" />
       <recent name="$PROJECT_DIR$/src/containers" />
     </key>
@@ -225,12 +273,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20748000" />
+    <option name="totallyTimeSpent" value="24575000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19957082" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19957082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Learn" order="2" />
       <window_info id="Designer" order="3" />
@@ -246,7 +295,7 @@
       <window_info anchor="bottom" id="Quokka" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.31143552" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.31143552" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -307,16 +356,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -331,23 +370,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/components/SideDrawer/SideDrawer.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/components/SideDrawer/SideDrawer.js">
+    <entry file="file://$PROJECT_DIR$/src/App/components/SideDrawer/SideDrawer.css" />
+    <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.css" />
+    <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/shoppingItem/ShoppingItem.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        <state relative-caret-position="240">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/shoppingItem/ShoppingItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-537">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/containers/Layout/Footer/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="10" column="73" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/components/Filter/Filter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.css">
+    <entry file="file://$PROJECT_DIR$/src/App/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        <state relative-caret-position="288">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/containers/Layout/SideDrawer/SideDrawer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -358,41 +440,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/components/Filter/Filter.js">
+    <entry file="file://$PROJECT_DIR$/src/App/containers/Layout/Layout.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/containers/Layout/Layout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        <state relative-caret-position="117">
+          <caret line="50" column="71" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#1027#1096#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/components/Footer/Footer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/containers/ShoppingList/ShoppingList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/components/shoppingItem/ShoppingItem.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/components/shoppingItem/ShoppingItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-537">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
         </state>
       </provider>
     </entry>

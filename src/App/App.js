@@ -1,16 +1,16 @@
 import React from 'react';
-
-import ShoppingList from "./containers/ShoppingList/ShoppingList";
-import Footer from "./components/Footer/Footer";
-
+import {BrowserRouter} from 'react-router-dom';
 import "./App.css";
+import Layout from "./containers/Layout/Layout";
 
 function App() {
+
     return (
-        <div className="container-fluid">
-            <ShoppingList/>
-            <Footer/>
-        </div>
+        <BrowserRouter>
+            <div className="container-fluid">
+                <Layout/>
+            </div>
+        </BrowserRouter>
     );
 }
 
