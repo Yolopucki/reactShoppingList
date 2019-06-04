@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {FormControl, InputGroup, Button} from "react-bootstrap"
 
 const Filter = ({handleFilterSearch, searchedValue, searchedCategory}) => {
-    let url = searchedCategory[0] ? `/${searchedCategory[0]}&${searchedValue}` : `/&${searchedValue}`;
+    let url = searchedCategory[0] ? `/${searchedCategory[0]}?${searchedValue}` : `/?${searchedValue}`;
 //!TODO make shouldcomponentupdate
     return (
         <div className="col-12 row">

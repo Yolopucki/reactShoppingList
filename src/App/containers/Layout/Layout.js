@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 
 import SideDrawer from "./SideDrawer/SideDrawer";
@@ -22,6 +22,8 @@ class Layout extends Component {
     };
 
     componentDidMount() {
+        const {location} = this.props;
+        const {searchedCategory, searchedValue} = this.state;
         axios.get('https://demo8421975.mockable.io/products')
             .then(list => {
                 this.setState({shoppingList: list.data.products});
@@ -32,6 +34,14 @@ class Layout extends Component {
                     });
             })
             .catch(error => console.log(error));
+        if (location.search && location.pathname && !searchedCategory[0] && !searchedValue) {
+            let word = location.search.substring(1, location.search.length);
+            let category = location.pathname.substring(1, location.pathname.length);
+            this.setState({
+                searchedValue:word, searchedCategory:searchedCategory[0]=category
+            })
+        }
+
     }
 
     handleFilterSearch = (event) => {
@@ -47,10 +57,10 @@ class Layout extends Component {
         return item.name.toLowerCase().includes(this.state.searchedValue)
             && this.state.searchedCategory.includes(item.bsr_category);
     };
-    filterItemsWithText = (item) => item.name.toLowerCase().includes(this.state.searchedValue);
 
 
     render() {
+        console.log(this.props, 'location');
         const {categories, shoppingList, searchedValue, searchedCategory} = this.state;
         return (
             <div
@@ -72,21 +82,14 @@ class Layout extends Component {
                             handleCategories={this.handleCategories}
                         />)}
                     </ButtonGroup>
-                    <Route
-                        path='/'
-                        exact
-                        render={props =>
-                            <ShoppingList {...props} {...{shoppingList}} {...{categories}} filterItems={this.filterItemsWithText}
-                                          all={true}
-                            />
-                        }
-                    />
-                    <Route
-                        path='/'
-                        render={props =>
-                            <ShoppingList {...props} {...{shoppingList}} {...{categories}} filterItems={this.filterItems}/>
-                        }
-                    />
+                    <Switch>
+                        <Route
+                            path='/:category'
+                            render={props =>
+                                <ShoppingList {...props} {...{shoppingList}} {...{categories}} filterItems={this.filterItems}/>
+                            }
+                        />
+                    </Switch>
                 </div>
                 <Footer/>
             </div>
