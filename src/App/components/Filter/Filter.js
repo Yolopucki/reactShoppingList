@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link} from "react-router-dom";
 import {FormControl, InputGroup, Button} from "react-bootstrap"
 
-const Filter = ({handleFilterSearch, searchedValue, searchedCategory}) => {
-    let url = searchedCategory[0] ? `/${searchedCategory[0]}?${searchedValue}` : `/?${searchedValue}`;
-//!TODO make shouldcomponentupdate
+const Filter = (props) => {
+    const {handleFilterSearch, searchedValue, searchedCategory} = props;
+    useEffect(e => {
+        console.log('it updates');
+    }, [searchedValue]);
+    let url = searchedCategory[0] ? `/${searchedCategory[0]}?${searchedValue}` : `?${searchedValue}`;
     return (
         <div className="col-12 row">
             <InputGroup className="mb-3 mt-3 justify-content-center">
@@ -21,8 +24,8 @@ const Filter = ({handleFilterSearch, searchedValue, searchedCategory}) => {
                     />
                     <Link to={url}> <Button
                         variant='success'
-                        size='lg'
-                    >Search</Button></Link>
+                        style={{width:'120px'}}
+                    >Set search</Button></Link>
                 </InputGroup.Prepend>
             </InputGroup>
         </div>

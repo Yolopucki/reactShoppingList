@@ -3,45 +3,15 @@ import React, {Component} from 'react';
 import ShoppingItem from "./shoppingItem/ShoppingItem";
 
 class ShoppingList extends Component {
-    state = {
-        url: ''
-    };
 
-    getDataFromUrl = () => {
-        // let url, regExpCategory, resC, category, regExpSearchedWord, resW, searchedWord;
-        // url = this.props.match.params.category;
-        //
-        // try {
-        //     //category
-        //     regExpCategory = /.+&/;
-        //     resC = url.match(regExpCategory);
-        //     category = resC[0].substring(0, resC[0].length - 1);
-        //     //word
-        //     regExpSearchedWord = /(?<=(.[a-z]&)).+/;
-        //     resW = url.match(regExpSearchedWord);
-        //     searchedWord = resW[0];
-        // } catch (e) {
-        //     console.log(e);
-        // }
-        // console.log(searchedWord, 'and', category);
-        // console.log(this.props.match.params.category);
-
-    };
-
-    componentDidMount() {
-//    check if it is first load and ajax is called then set state to
-//    this.props.match.param
-        this.getDataFromUrl();
-
-
-    }
-
+// shouldComponentUpdate(nextProps, nextState, nextContext) {
+//     if(this.props.shoppingList !== nextProps.shoppingList || this.props.categories !== nextProps.categories){
+//         return true
+//     }return false
+// }
     render() {
-        const {shoppingList, categories, filterItems, ...all} = this.props;
+        const {shoppingList, categories, filterItems} = this.props;
         let display;
-        console.log(this.props);
-
-
         display = shoppingList && categories && shoppingList.filter(filterItems)
             .map(p => (
                 <ShoppingItem

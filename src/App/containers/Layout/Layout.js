@@ -34,25 +34,27 @@ class Layout extends Component {
                     });
             })
             .catch(error => console.log(error));
-        if (location.search && location.pathname && !searchedCategory[0] && !searchedValue) {
-            let word = location.search.substring(1, location.search.length);
-            let category = location.pathname.substring(1, location.pathname.length);
+        if ((location.search || location.pathname) && !searchedCategory[0] && !searchedValue) {
+            let word = location.search && location.search.substring(1, location.search.length);
+            let category = location.pathname && location.pathname.substring(1, location.pathname.length);
             this.setState({
-                searchedValue:word, searchedCategory:searchedCategory[0]=category
+                searchedValue: word, searchedCategory: searchedCategory[0] = category
             })
         }
 
     }
 
+// search by input
     handleFilterSearch = (event) => {
         this.setState({searchedValue: event.target.value});
     };
+    // change value in  filter by category
     handleCategories = (category) => {
         let newFilteredByCategories = [...this.state.searchedCategory];
         newFilteredByCategories[0] = category;
         this.setState({searchedCategory: newFilteredByCategories});
     };
-
+// for mapping array of products
     filterItems = (item) => {
         return item.name.toLowerCase().includes(this.state.searchedValue)
             && this.state.searchedCategory.includes(item.bsr_category);
@@ -60,9 +62,9 @@ class Layout extends Component {
 
 
     render() {
-        console.log(this.props, 'location');
         const {categories, shoppingList, searchedValue, searchedCategory} = this.state;
         return (
+            // some inline styles for keeping footer at the bottom
             <div
                 className="position-relative"
                 style={{minHeight: '100vh'}}
