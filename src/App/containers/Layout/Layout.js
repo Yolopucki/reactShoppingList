@@ -1,45 +1,32 @@
 import React, {Component} from 'react';
-import axios from "axios";
+// import axios from 'axios';
 import {Route, Switch} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 
-import SideDrawer from "./SideDrawer/SideDrawer";
-import ShoppingList from "../../containers/ShoppingList/ShoppingList"
-import Footer from "./Footer/Footer";
-import Filter from "../../components/Filter/Filter";
-import ButtonGroup from "react-bootstrap/es/test/ButtonGroup";
+import SideDrawer from './SideDrawer/SideDrawer';
+import ShoppingList from '../../containers/ShoppingList/ShoppingList';
+import Footer from './Footer/Footer';
+import Filter from '../../components/Filter/Filter';
+import ButtonGroup from 'react-bootstrap/es/test/ButtonGroup';
+import {getData} from '../../redux/ajax/actions';
 
 class Layout extends Component {
     state = {
-        //all shop
-        shoppingList: null,
-        //all categories
-        categories: null,
-        //search by name
         searchedValue: '',
-        //search by category
         searchedCategory: []
     };
 
     componentDidMount() {
         const {location} = this.props;
         const {searchedCategory, searchedValue} = this.state;
-        axios.get('https://demo8421975.mockable.io/products')
-            .then(list => {
-                this.setState({shoppingList: list.data.products});
-                let newCategories = [...new Set(list.data.products.map(p => p.bsr_category))];
-                this.setState(
-                    {
-                        categories: newCategories,
-                    });
-            })
-            .catch(error => console.log(error));
+        this.props.onGetData();
         if ((location.search || location.pathname) && !searchedCategory[0] && !searchedValue) {
             let word = location.search && location.search.substring(1, location.search.length);
             let category = location.pathname && location.pathname.substring(1, location.pathname.length);
             this.setState({
                 searchedValue: word, searchedCategory: searchedCategory[0] = category
-            })
+            });
         }
 
     }
@@ -62,7 +49,7 @@ class Layout extends Component {
 
 
     render() {
-        const {categories, shoppingList, searchedValue, searchedCategory} = this.state;
+        const {searchedValue, searchedCategory} = this.state;
         return (
             // some inline styles for keeping footer at the bottom
             <div
@@ -79,7 +66,7 @@ class Layout extends Component {
                         {...{searchedCategory}}
                     />
                     <ButtonGroup className="col-12  col-md-3 d-flex flex-column">
-                        {categories && categories.map(category => <SideDrawer
+                        {this.props.categories && this.props.categories.map(category => <SideDrawer
                             key={category} {...{category}}
                             handleCategories={this.handleCategories}
                         />)}
@@ -88,7 +75,10 @@ class Layout extends Component {
                         <Route
                             path='/:category'
                             render={props =>
-                                <ShoppingList {...props} {...{shoppingList}} {...{categories}} filterItems={this.filterItems}/>
+                                <ShoppingList {...props} shoppingList={this.props.shoppingList}
+                                              categories={this.props.categories}
+                                              filterItems={this.filterItems}
+                                />
                             }
                         />
                     </Switch>
@@ -99,4 +89,12 @@ class Layout extends Component {
     }
 }
 
-export default Layout;
+const mapStateToProps = state => {
+    return {categories: state.categories, shoppingList: state.products};
+};
+const mapDispatchToProps = dispatch => {
+    return {
+        onGetData: () => dispatch(getData())
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);
