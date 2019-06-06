@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import axios from 'axios';
 import {Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 
@@ -9,7 +8,7 @@ import ShoppingList from '../../containers/ShoppingList/ShoppingList';
 import Footer from './Footer/Footer';
 import Filter from '../../components/Filter/Filter';
 import ButtonGroup from 'react-bootstrap/es/test/ButtonGroup';
-import {getData} from '../../redux/ajax/actions';
+import {initiateGetData} from '../../redux/ajax/actions';
 
 class Layout extends Component {
     state = {
@@ -94,7 +93,7 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
     return {
-        onGetData: () => dispatch(getData())
+        onGetData: () => dispatch(initiateGetData())
     };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Layout);

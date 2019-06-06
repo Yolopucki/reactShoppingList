@@ -5,7 +5,6 @@ import {FormControl, InputGroup, Button} from "react-bootstrap"
 const Filter = (props) => {
     const {handleFilterSearch, searchedValue, searchedCategory} = props;
     useEffect(e => {
-        console.log('it updates');
     }, [searchedValue]);
     let url = searchedCategory[0] ? `/${searchedCategory[0]}?${searchedValue}` : `?${searchedValue}`;
     return (
