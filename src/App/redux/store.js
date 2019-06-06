@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 import ajaxReducer from './ajax/reducers';
-import {watchData} from './ajax/sagas/index';
+import {watchData} from './rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 

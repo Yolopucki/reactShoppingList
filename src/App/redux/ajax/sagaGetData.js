@@ -1,6 +1,6 @@
-import {put} from 'redux-saga/effects';
-import axios from 'axios';
-import {getCategoriesSync, getProductsSync} from '../actions';
+import {put} from 'redux-saga/dist/redux-saga-effects-npm-proxy.esm';
+import axios from 'axios/index';
+import {getCategoriesSync, getProductsSync} from './actions';
 
 
 export function* getData (action){
