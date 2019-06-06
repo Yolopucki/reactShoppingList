@@ -1,4 +1,5 @@
 import * as ActionTypes from './actionTypes';
+import {updatedObject} from './utils';
 
 const initialState = {
     products: [],
@@ -7,17 +8,13 @@ const initialState = {
 const ajaxRequest = (state = initialState, action) => {
     switch (action.type) {
         case ActionTypes.GET_PRODUCTS:
-            return {
-                ...state,
-                products:  action.payload
-            };
+            return updatedObject(state, {products: action.payload});
         case ActionTypes.GET_CATEGORIES:
-            return {
-                ...state,
-                categories: action.payload
-            };
+            return updatedObject(state, {categories: action.payload});
+        default:
+            return state;
     }
-    return state;
 };
+
 
 export default ajaxRequest;
