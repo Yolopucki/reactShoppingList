@@ -1,14 +1,11 @@
 import React from 'react';
 
+import classes from './footer.module.scss';
 
-const Footer = props => <footer
-    className="card-footer footer text-center"
-    style={{
-        position: 'absolute',
-        bottom: '0',
-        width: '100%',
-        height: '2.5rem'
-    }}
+
+const Footer = () => <footer
+    data-test='footerComponent'
+    className={[classes.footer, 'card-footer', 'footer', 'text-center'].join(' ')}
 >  &copy; Victor Orlyk</footer>;
 
 

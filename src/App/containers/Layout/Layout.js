@@ -1,30 +1,35 @@
 import React, {Component} from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 
 import SideDrawer from './SideDrawer/SideDrawer';
 import ShoppingList from '../../containers/ShoppingList/ShoppingList';
 import Footer from './Footer/Footer';
 import Filter from '../../components/Filter/Filter';
-import ButtonGroup from 'react-bootstrap/es/test/ButtonGroup';
 import {initiateGetData} from '../../redux/ajax/actions';
+import classes from './layout.module.scss';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 class Layout extends Component {
     state = {
         searchedValue: '',
-        searchedCategory: []
+        searchedCategory: ''
     };
 
     componentDidMount() {
         const {location} = this.props;
-        const {searchedCategory, searchedValue} = this.state;
+        let {searchedCategory, searchedValue} = this.state;
+        //fetch  data via axios in saga
         this.props.onGetData();
-        if ((location.search || location.pathname) && !searchedCategory[0] && !searchedValue) {
+        if ((location.search || location.pathname) && !searchedCategory && !searchedValue) {
             let word = location.search && location.search.substring(1, location.search.length);
             let category = location.pathname && location.pathname.substring(1, location.pathname.length);
             this.setState({
-                searchedValue: word, searchedCategory: searchedCategory[0] = category
+                searchedValue: word, searchedCategory: category
             });
         }
 
@@ -37,13 +42,22 @@ class Layout extends Component {
     // change value in  filter by category
     handleCategories = (category) => {
         let newFilteredByCategories = [...this.state.searchedCategory];
-        newFilteredByCategories[0] = category;
+        newFilteredByCategories = category;
         this.setState({searchedCategory: newFilteredByCategories});
     };
 // for mapping array of products
     filterItems = (item) => {
-        return item.name.toLowerCase().includes(this.state.searchedValue)
-            && this.state.searchedCategory.includes(item.bsr_category);
+        if (this.state.searchedCategory === '') {
+            return item.name.toLowerCase().includes(this.state.searchedValue);
+        } else {
+            if (item.name.toLowerCase().includes(this.state.searchedValue)
+                && this.state.searchedCategory === (item.bsr_category)) {
+                return true;
+            }
+        }
+    };
+    showAll = () => {
+        this.setState((state) => ({searchedCategory: state.searchedCategory = ''}));
     };
 
 
@@ -51,49 +65,49 @@ class Layout extends Component {
         const {searchedValue, searchedCategory} = this.state;
         return (
             // some inline styles for keeping footer at the bottom
-            <div
-                className="position-relative"
-                style={{minHeight: '100vh'}}
-            >
-                <div
-                    className="row"
-                    style={{padding: '2.5rem'}}
-                >
+            <Container data-test='layoutComponent' className={[classes.layoutComponent, 'position-relative'].join(' ')}>
+                <Row className={classes.layoutRow}>
                     <Filter
                         handleFilterSearch={this.handleFilterSearch}
-                        searchedValue={searchedValue}
-                        {...{searchedCategory}}
+                        searchedValue={searchedValue} searchedCategory={searchedCategory}
                     />
-                    <ButtonGroup className="col-12  col-md-3 d-flex flex-column">
+                    <Col xs={12} md={3} className="d-flex flex-column">
+                        <Link to='/showAll'>
+                            <button className='btn btn-primary mb-4' onClick={this.showAll}> Show all</button>
+                        </Link>
                         {this.props.categories && this.props.categories.map(category => <SideDrawer
                             key={category} {...{category}}
                             handleCategories={this.handleCategories}
                         />)}
-                    </ButtonGroup>
+                    </Col>
                     <Switch>
                         <Route
                             path='/:category'
                             render={props =>
                                 <ShoppingList {...props} shoppingList={this.props.shoppingList}
-                                              categories={this.props.categories}
-                                              filterItems={this.filterItems}
+                                              categories={this.props.categories} filterItems={this.filterItems}
                                 />
                             }
                         />
                     </Switch>
-                </div>
+                </Row>
                 <Footer/>
-            </div>
+            </Container>
         );
     }
 }
 
+
 const mapStateToProps = state => {
-    return {categories: state.categories, shoppingList: state.products};
+    return {categories: state.ajaxReducer.categories, shoppingList: state.ajaxReducer.products};
 };
 const mapDispatchToProps = dispatch => {
     return {
         onGetData: () => dispatch(initiateGetData())
     };
+};
+Layout.propTypes = {
+    categories: PropTypes.array,
+    shoppingList: PropTypes.array
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Layout);

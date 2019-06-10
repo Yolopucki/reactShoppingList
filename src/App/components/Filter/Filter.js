@@ -1,21 +1,27 @@
 import React, {useEffect} from 'react';
-import {Link} from "react-router-dom";
-import {FormControl, InputGroup, Button} from "react-bootstrap"
+import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+import {FormControl, InputGroup, Button} from 'react-bootstrap';
+import classes from './filter.module.scss';
 
 const Filter = (props) => {
     const {handleFilterSearch, searchedValue, searchedCategory} = props;
-    useEffect(e => {
+
+    useEffect(() => {
     }, [searchedValue]);
-    let url = searchedCategory[0] ? `/${searchedCategory[0]}?${searchedValue}` : `?${searchedValue}`;
+
+    let url = searchedCategory ? `/${searchedCategory}?${searchedValue}` : `?${searchedValue}`;
+
     return (
-        <div className="col-12 row">
+        <div className="col-12 row" data-test='filterComponent'>
             <InputGroup className="mb-3 mt-3 justify-content-center">
                 <InputGroup.Prepend>
                     <InputGroup.Text id="basic-addon3">
                         Filter:
                     </InputGroup.Text>
                     <FormControl
-                        placeholder={searchedValue}
+                        placeholder='search'
                         value={searchedValue}
                         aria-label="Username"
                         aria-describedby="basic-addon1"
@@ -23,13 +29,18 @@ const Filter = (props) => {
                     />
                     <Link to={url}> <Button
                         variant='success'
-                        style={{width:'120px'}}
+                        className={classes.button}
                     >Set search</Button></Link>
                 </InputGroup.Prepend>
             </InputGroup>
         </div>
 
     );
+};
+Filter.propTypes = {
+    handleFilterSearch: PropTypes.func,
+    searchedValue: PropTypes.string,
+    searchedCategory: PropTypes.string
 };
 
 export default Filter;
