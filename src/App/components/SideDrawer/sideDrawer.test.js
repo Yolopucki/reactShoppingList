@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow} from 'enzyme/build';
 import SideDrawer from './SideDrawer';
 
 
@@ -7,13 +7,11 @@ const setUp = (props = {}) => {
     return shallow(<SideDrawer {...props}/>);
 };
 describe('SideDrawer', () => {
-
     describe('should render has category', () => {
         let component;
         beforeEach(() => {
             const props = {
-                category: 'food', handleCategories: () => {
-                }
+                category: 'food', emitEvent: ()=>{}
             };
             component = setUp(props);
 
@@ -22,14 +20,15 @@ describe('SideDrawer', () => {
             const wrapper = component.find(`[data-test='sideDrawerComponent']`);
             expect(wrapper.length).toBe(1);
         });
-    });
 
-    describe('should NOT render', ()=>{
-        it('should not render', () => {
-           let  component = setUp();
-            const wrapper = component.find(`[data-test='sideDrawerComponent']`);
-            expect(wrapper.length).toBe(0);
+
+        describe('should NOT render', () => {
+            it('should not render', () => {
+                let component = setUp();
+                const wrapper = component.find(`[data-test='sideDrawerComponent']`);
+                expect(wrapper.length).toBe(0);
+            });
         });
-    })
 
+    });
 });

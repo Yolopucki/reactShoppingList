@@ -11,6 +11,7 @@ const SideDrawer = (props) => {
         <Link to={category} data-test='sideDrawerComponent'> <Button
             block
             className="mb-3"
+            data-test='sideDrawerButton'
             onClick={() => {
                 handleCategories(category);
             }}

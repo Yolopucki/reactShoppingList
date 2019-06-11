@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import ShoppingItem from './shoppingItem/ShoppingItem';
+import ShoppingItem from '../../../components/shoppingItem/ShoppingItem';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 

@@ -3,16 +3,16 @@ import {Route, Switch, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-
-import SideDrawer from './SideDrawer/SideDrawer';
-import ShoppingList from './ShoppingList/ShoppingList';
-import Footer from './Footer/Footer';
-import Filter from '../../components/Filter/Filter';
-import {initiateGetData} from '../../redux/ajax/actions';
-import classes from './layout.module.scss';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import {initiateGetData} from '../../redux/ajax/actions';
+import classes from './layout.module.scss';
+import SideDrawer from '../../components/SideDrawer/SideDrawer';
+import ShoppingList from './ShoppingList/ShoppingList';
+import Footer from '../../components/Footer/Footer';
+import Filter from '../../components/Filter/Filter';
+
 
 class Layout extends Component {
     state = {
@@ -32,7 +32,6 @@ class Layout extends Component {
                 searchedValue: word, searchedCategory: category
             });
         }
-
     }
 
 // search by input
@@ -56,6 +55,7 @@ class Layout extends Component {
             }
         }
     };
+
     showAll = () => {
         this.setState((state) => ({searchedCategory: state.searchedCategory = ''}));
     };
@@ -106,6 +106,7 @@ const mapDispatchToProps = dispatch => {
         onGetData: () => dispatch(initiateGetData())
     };
 };
+
 Layout.propTypes = {
     categories: PropTypes.array,
     shoppingList: PropTypes.array
