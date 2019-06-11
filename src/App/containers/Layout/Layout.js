@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 
 import SideDrawer from './SideDrawer/SideDrawer';
-import ShoppingList from '../../containers/ShoppingList/ShoppingList';
+import ShoppingList from './ShoppingList/ShoppingList';
 import Footer from './Footer/Footer';
 import Filter from '../../components/Filter/Filter';
 import {initiateGetData} from '../../redux/ajax/actions';

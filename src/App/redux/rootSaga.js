@@ -1,4 +1,4 @@
-import {takeEvery} from 'redux-saga/dist/redux-saga-effects-npm-proxy.esm';
+import {takeEvery} from 'redux-saga/effects';
 import {getData} from './ajax/sagaGetData';
 import * as ActionTypes from './ajax/actionTypes'
 

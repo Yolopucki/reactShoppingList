@@ -45,10 +45,11 @@
     ]
   },
   "devDependencies": {
-    "axios-mock-adapter": "^1.16.0",
+    "check-prop-types": "^1.1.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "jest-enzyme": "^7.0.2",
-    "moxios": "^0.4.0"
+    "moxios": "^0.4.0",
+    "redux-saga-test-plan": "^4.0.0-beta.3"
   }
 }
