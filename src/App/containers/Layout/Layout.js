@@ -22,7 +22,7 @@ class Layout extends Component {
 
     componentDidMount() {
         const {location} = this.props;
-        let {searchedCategory, searchedValue} = this.state;
+        const {searchedCategory, searchedValue} = this.state;
         //fetch  data via axios in saga
         this.props.onGetData();
         if ((location.search || location.pathname) && !searchedCategory && !searchedValue) {
@@ -63,6 +63,7 @@ class Layout extends Component {
 
     render() {
         const {searchedValue, searchedCategory} = this.state;
+        const {categories, shoppingList} = this.props;
         return (
             // some inline styles for keeping footer at the bottom
             <Container data-test='layoutComponent' className={[classes.layoutComponent, 'position-relative'].join(' ')}>
@@ -75,7 +76,7 @@ class Layout extends Component {
                         <Link to='/showAll'>
                             <button className='btn btn-primary mb-4' onClick={this.showAll}> Show all</button>
                         </Link>
-                        {this.props.categories && this.props.categories.map(category => <SideDrawer
+                        {categories && categories.map(category => <SideDrawer
                             key={category} {...{category}}
                             handleCategories={this.handleCategories}
                         />)}
@@ -84,8 +85,8 @@ class Layout extends Component {
                         <Route
                             path='/:category'
                             render={props =>
-                                <ShoppingList {...props} shoppingList={this.props.shoppingList}
-                                              categories={this.props.categories} filterItems={this.filterItems}
+                                <ShoppingList {...props} shoppingList={shoppingList}
+                                              categories={categories} filterItems={this.filterItems}
                                 />
                             }
                         />

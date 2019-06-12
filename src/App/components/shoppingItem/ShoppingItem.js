@@ -6,6 +6,7 @@ import {Button} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 
 
+
 const getStarsWidth = (stars) => {
     const starTotal = 5;
     const starPercentage = (stars / starTotal) * 100;

@@ -8,5 +8,4 @@ export function* getData (action){
             yield put(getProductsSync(response.data.products));
            let newCategories =  [...new Set(response.data.products.map(p => p.bsr_category))];
             yield put(getCategoriesSync(newCategories))
-
 }

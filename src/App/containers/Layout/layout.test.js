@@ -3,6 +3,7 @@ import {shallow} from 'enzyme';
 
 import Layout from './Layout';
 import {findByTestAtrr, testStore} from '../../../../Utils/utils';
+import ajaxReducer from './../../redux/ajax/reducers'
 
 const setUp = (initialState = {}) => {
     const store = testStore(initialState);
@@ -13,20 +14,7 @@ describe('Layout component', () => {
     let wrapper;
     beforeEach(() => {
         const initialState = {
-            posts: [
-                {
-                    title: 'Example title 1',
-                    body: 'some text'
-                },
-                {
-                    title: 'Example title 2',
-                    body: 'some text'
-                },
-                {
-                    title: 'Example title 3',
-                    body: 'some text'
-                },
-            ]
+            ajaxReducer
         };
         wrapper = setUp(initialState);
     });
