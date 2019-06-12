@@ -1,34 +1,39 @@
-import React from 'react';
-import {shallow} from 'enzyme/build';
-import SideDrawer from './SideDrawer';
+import React from "react";
+import {shallow} from "enzyme";
+
+import SideDrawer from "./SideDrawer";
+import {findByTestAtrr, checkProps} from "../../../Utils/utils";
 
 
 const setUp = (props = {}) => {
     return shallow(<SideDrawer {...props}/>);
 };
-describe('SideDrawer', () => {
-    describe('should render has category', () => {
-        let component;
-        beforeEach(() => {
+describe("SideDrawer", () => {
+    describe("should render has category", () => {
+        it("should render without errors", () => {
             const props = {
-                category: 'food', emitEvent: ()=>{}
+                category: "food", emitEvent: () => {
+                }
             };
-            component = setUp(props);
-
-        });
-        it('should render without errors', () => {
-            const wrapper = component.find(`[data-test='sideDrawerComponent']`);
+            let component = setUp(props);
+            const wrapper = findByTestAtrr(component, "sideDrawerComponent");
             expect(wrapper.length).toBe(1);
         });
-
-
-        describe('should NOT render', () => {
-            it('should not render', () => {
-                let component = setUp();
-                const wrapper = component.find(`[data-test='sideDrawerComponent']`);
-                expect(wrapper.length).toBe(0);
-            });
+        it("should check prop types and pass", () => {
+            const expectedProps = {
+                category: "food", emitEvent: () => {
+                }
+            };
+            const propsError = checkProps(SideDrawer, expectedProps);
+            expect(propsError).toBeUndefined();
         });
+    });
 
+    describe("should NOT render", () => {
+        it("should not render", () => {
+            let component = setUp();
+            const wrapper = component.find(`[data-test='sideDrawerComponent']`);
+            expect(wrapper.length).toBe(0);
+        });
     });
 });

@@ -1,23 +1,25 @@
-import React, {Component} from 'react';
-import {Route, Switch, Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
+import React, {Component} from "react";
+import {Route, Switch, Link} from "react-router-dom";
+import {connect} from "react-redux";
+import PropTypes from "prop-types";
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import {initiateGetData} from '../../redux/ajax/actions';
-import classes from './layout.module.scss';
-import SideDrawer from '../../components/SideDrawer/SideDrawer';
-import ShoppingList from './ShoppingList/ShoppingList';
-import Footer from '../../components/Footer/Footer';
-import Filter from '../../components/Filter/Filter';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
+import SideDrawer from "../../components/SideDrawer/SideDrawer";
+import ShoppingList from "./ShoppingList/ShoppingList";
+import Footer from "../../components/Footer/Footer";
+import Filter from "../../components/Filter/Filter";
+
+import {initiateGetData} from "../../redux/ajax/actions";
+import classes from "./layout.module.scss";
 
 
 class Layout extends Component {
     state = {
-        searchedValue: '',
-        searchedCategory: ''
+        searchedValue: "",
+        searchedCategory: ""
     };
 
     componentDidMount() {
@@ -45,8 +47,8 @@ class Layout extends Component {
         this.setState({searchedCategory: newFilteredByCategories});
     };
 // for mapping array of products
-    filterItems = (item) => {
-        if (this.state.searchedCategory === '') {
+    onFilterItems = (item) => {
+        if (this.state.searchedCategory === "") {
             return item.name.toLowerCase().includes(this.state.searchedValue);
         } else {
             if (item.name.toLowerCase().includes(this.state.searchedValue)
@@ -56,8 +58,8 @@ class Layout extends Component {
         }
     };
 
-    showAll = () => {
-        this.setState((state) => ({searchedCategory: state.searchedCategory = ''}));
+    handleShowAll = () => {
+        this.setState((state) => ({searchedCategory: state.searchedCategory = ""}));
     };
 
 
@@ -66,15 +68,15 @@ class Layout extends Component {
         const {categories, shoppingList} = this.props;
         return (
             // some inline styles for keeping footer at the bottom
-            <Container data-test='layoutComponent' className={[classes.layoutComponent, 'position-relative'].join(' ')}>
+            <Container data-test="layoutComponent" className={[classes.layoutComponent, "position-relative"].join(" ")}>
                 <Row className={classes.layoutRow}>
                     <Filter
                         handleFilterSearch={this.handleFilterSearch}
                         searchedValue={searchedValue} searchedCategory={searchedCategory}
                     />
                     <Col xs={12} md={3} className="d-flex flex-column">
-                        <Link to='/showAll'>
-                            <button className='btn btn-primary mb-4' onClick={this.showAll}> Show all</button>
+                        <Link to="/showAll">
+                            <button className="btn btn-primary mb-4" onClick={this.handleShowAll}> Show all</button>
                         </Link>
                         {categories && categories.map(category => <SideDrawer
                             key={category} {...{category}}
@@ -83,10 +85,10 @@ class Layout extends Component {
                     </Col>
                     <Switch>
                         <Route
-                            path='/:category'
+                            path="/:category"
                             render={props =>
                                 <ShoppingList {...props} shoppingList={shoppingList}
-                                              categories={categories} filterItems={this.filterItems}
+                                              categories={categories} onFilterItems={this.onFilterItems}
                                 />
                             }
                         />
@@ -109,7 +111,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 Layout.propTypes = {
-    categories: PropTypes.array,
-    shoppingList: PropTypes.array
+    categories: PropTypes.arrayOf(PropTypes.string),
+    shoppingList: PropTypes.arrayOf(PropTypes.object)
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Layout);

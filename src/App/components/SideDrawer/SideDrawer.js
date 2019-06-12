@@ -1,17 +1,17 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React from "react";
+import {Link} from "react-router-dom";
+import PropTypes from "prop-types";
 
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 const SideDrawer = (props) => {
     const {category, handleCategories} = props;
-    if(!category)return  null;
+    if (!category) return null;
     return (
-        <Link to={category} data-test='sideDrawerComponent'> <Button
+        <Link to={category} data-test="sideDrawerComponent"> <Button
             block
             className="mb-3"
-            data-test='sideDrawerButton'
+            data-test="sideDrawerButton"
             onClick={() => {
                 handleCategories(category);
             }}

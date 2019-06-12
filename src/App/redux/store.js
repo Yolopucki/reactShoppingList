@@ -1,11 +1,11 @@
-import {applyMiddleware, createStore, compose} from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+import {applyMiddleware, createStore, compose} from "redux";
+import createSagaMiddleware from "redux-saga";
+import thunk from "redux-thunk";
+import logger from "redux-logger";
 
 
-import rootReducer from './rootReducer';
-import {watchData} from './rootSaga';
+import rootReducer from "./rootReducer";
+import {watchData} from "./rootSaga";
 //saga
 const sagaMiddleware = createSagaMiddleware();
 //to use redux devtools in chrome

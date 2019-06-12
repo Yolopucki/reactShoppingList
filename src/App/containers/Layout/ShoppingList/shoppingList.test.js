@@ -1,11 +1,23 @@
-import React from 'react';
-import {shallow} from 'enzyme/build';
-import ShoppingList from './ShoppingList';
+import React from "react";
+import {shallow} from "enzyme";
 
-describe('ShoppingList', ()=>{
-    it('should render without errors',()=>{
+import ShoppingList from "./ShoppingList";
+import {findByTestAtrr, checkProps} from "../../../../Utils/utils";
+import PropTypes from "prop-types";
+
+describe("ShoppingList", () => {
+    it("should render without errors", () => {
         const component = shallow(<ShoppingList/>);
-        const wrapper = component.find(`[data-test='shoppingListComponent']`);
+        const wrapper = findByTestAtrr(component, "shoppingListComponent");
         expect(wrapper.length).toBe(1);
-    })
+    });
+    it("should check proptypes and pass", () => {
+        let expectedProps = {
+            shoppingList: [{name: "vitya"}, {name: "vasya"}],
+            categories: ["some", "string"],
+            filterItems: () => {
+            }
+        };
+        const propsError = checkProps(ShoppingList, expectedProps);
+    });
 });

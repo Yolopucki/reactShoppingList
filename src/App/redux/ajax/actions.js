@@ -1,4 +1,4 @@
-import * as ActionTypes from './actionTypes';
+import * as ActionTypes from "./actionTypes";
 
 export const getProductsSync = (products) => {
     return ({
@@ -13,10 +13,10 @@ export const getCategoriesSync = (categories) => {
     });
 };
 
-export const initiateGetData = ()=>{
-    return({
-        type:ActionTypes.GET_DATA
-    })
+export const initiateGetData = () => {
+    return ({
+        type: ActionTypes.GET_DATA
+    });
 };
 
 

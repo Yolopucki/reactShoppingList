@@ -1,11 +1,13 @@
-import React from 'react';
-import {shallow} from 'enzyme/build';
-import Footer from './Footer';
+import React from "react";
+import {shallow} from "enzyme";
 
-describe('Footer', ()=>{
-    it('should render without errors',()=>{
+import {findByTestAtrr} from "../../../Utils/utils";
+import Footer from "./Footer";
+
+describe("Footer", () => {
+    it("should render without errors", () => {
         const component = shallow(<Footer/>);
-        const wrapper = component.find(`[data-test='footerComponent']`);
+        const wrapper = findByTestAtrr(component, "footerComponent");
         expect(wrapper.length).toBe(1);
-    })
+    });
 });

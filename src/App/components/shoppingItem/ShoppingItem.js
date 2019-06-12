@@ -1,13 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import './ShoppingItem.scss';
-import {Button} from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
+import {Button} from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import "./ShoppingItem.scss";
 
 
-
-const getStarsWidth = (stars) => {
+const onGetStarsWidth = (stars) => {
     const starTotal = 5;
     const starPercentage = (stars / starTotal) * 100;
     const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
@@ -21,15 +20,15 @@ const ShoppingItem = (props) => {
             <Card.Img
                 variant="top"
                 src={image}
-                className='image'
+                className="image"
             />
-            <Card.Body className='cardItem__body'>
+            <Card.Body className="cardItem__body">
                 <div className="stars-outer">
-                    <div className="stars-inner" style={{width: getStarsWidth(stars)}}></div>
+                    <div className="stars-inner" style={{width: onGetStarsWidth(stars)}}></div>
                 </div>
-                <Card.Text className='cardItem__text'>{name}</Card.Text>
-                <Card.Title className='cardItem__title'>Price: {price} $</Card.Title>
-                <Button variant="success" size="lg" className='cardItem__button'><a href={link}>Buy</a></Button>
+                <Card.Text className="cardItem__text">{name}</Card.Text>
+                <Card.Title className="cardItem__title">Price: {price} $</Card.Title>
+                <Button variant="success" size="lg" className="cardItem__button"><a href={link}>Buy</a></Button>
             </Card.Body>
         </Card>
     );

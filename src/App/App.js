@@ -1,8 +1,8 @@
-import React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import React from "react";
+import {BrowserRouter, Route} from "react-router-dom";
 
-import './App.scss';
-import Layout from './containers/Layout/Layout';
+import "./App.scss";
+import Layout from "./containers/Layout/Layout";
 
 const App = () => {
     return (
